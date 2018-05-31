@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Times_Table" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-29-wdR">
+                                <rect key="frame" x="0.0" y="31" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Times Table" id="m1h-2L-L5e"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qS-Id-PCN">
+                                <rect key="frame" x="0.0" y="113" width="375" height="665"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ZSO-X0-rUJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZSO-X0-rUJ" id="irZ-of-bCz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9ZK-Ga-1w0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tj0-xg-Ff7"/>
+                                </connections>
+                            </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XnU-JP-UdF">
+                                <rect key="frame" x="14" y="75" width="347" height="31"/>
+                                <connections>
+                                    <action selector="SliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="J6L-3H-G0y"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XnU-JP-UdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0BN-84-81D"/>
+                            <constraint firstItem="1qS-Id-PCN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Nka-S4-xL9"/>
+                            <constraint firstItem="XnU-JP-UdF" firstAttribute="top" secondItem="zIF-29-wdR" secondAttribute="bottom" id="Osp-xg-RMx"/>
+                            <constraint firstItem="1qS-Id-PCN" firstAttribute="top" secondItem="XnU-JP-UdF" secondAttribute="bottom" constant="8" id="Pru-d4-nXJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XnU-JP-UdF" secondAttribute="trailing" constant="16" id="Qe2-wC-trb"/>
+                            <constraint firstItem="zIF-29-wdR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YWj-VH-5Dc"/>
+                            <constraint firstItem="1qS-Id-PCN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eUB-tX-Wie"/>
+                            <constraint firstItem="zIF-29-wdR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iH7-5D-fgD"/>
+                            <constraint firstItem="zIF-29-wdR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="31" id="kMA-SK-xO3"/>
+                            <constraint firstItem="1qS-Id-PCN" firstAttribute="top" secondItem="XnU-JP-UdF" secondAttribute="bottom" constant="8" id="mnz-aY-D2j"/>
+                            <constraint firstItem="1qS-Id-PCN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xfP-op-aap"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="XnU-JP-UdF" id="mss-dS-Xlu"/>
+                        <outlet property="table" destination="1qS-Id-PCN" id="Zn3-nU-rOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="132.26600985221674"/>
+        </scene>
+    </scenes>
+</document>
